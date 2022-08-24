@@ -1,5 +1,17 @@
 import java.util.Scanner;
 public class Calculator {
+    public double add(double num1,double num2){
+      return num1+num2;
+   }
+    public double substract(double num1,double num2){
+      return num1-num2;
+   }
+   public double multiply(double num1,double num2){
+      return num1*num2;
+   }
+    public double divide(double num1,double num2){
+      return num1/num2;
+   }
    public static void main(String[] args) {
       double num1;
       double num2;
@@ -9,21 +21,22 @@ public class Calculator {
       System.out.print("Enter two numbers: ");
       num1 = reader.nextDouble();
       num2 = reader.nextDouble();
-      System.out.print("\nEnter an operator (+, -, *, /): ");
+      System.out.print("\nEnter an operator (+, -): ");
       op = reader.next().charAt(0);
       switch(op) {
-         case '+': ans = num1 + num2;
+         case '+': ans = add(num1,num2);
             break;
-         case '-': ans = num1 - num2;
+         case '-': ans = substract(num1,num2);
             break;
-         case '*': ans = num1 * num2;
+            case '*': ans = multiply(num1,num2);
             break;
-         case '/': ans = num1 / num2;
+         case '/': ans = divide(num1,num2);
             break;
       default: System.out.printf("Error! Enter correct operator");
          return;
       }
       System.out.print("\nThe result is given as follows:\n");
-      System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
+ System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
    }
+  
 }
